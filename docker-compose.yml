@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+   jenkins:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: on-failure:10
+    ports:
+      - 8080:8080
+      - 50000:50000
+    volumes:
+     - /var/jenkins_home
